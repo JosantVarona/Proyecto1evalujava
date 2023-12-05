@@ -1,35 +1,29 @@
 package Model;
 
 public class Mazo {
-    private Card[] cards = new Card[51];
+    private Card[] cards = new Card[52];
 
+    public Mazo() {
+        String[] palos={"Diamante","Picas","Treboles","Corazones"};
+        int c=0;
+        for(String palo:palos){  //4 palo=Diamante, palo=Picas...
+            for(int j=1;j<=13;j++){
+                cards[c]=new Card(j,palo);
+                c++;
+            }
+        }
+    }
+
+    public Card sacaCarta(){
+        int numero = numeroDeLaCarta();
+        return cards[numero];
+    }
     public int numeroDeLaCarta(){
-        int mayor = 13;
-        int bajo = 1;
+        int mayor = 51;
+        int bajo = 0;
         int numero= (int) (Math.random()*(mayor - bajo))+ bajo;
 
         return numero;
-    }
-    public String paloDeLaCarta(){
-        int palo= 3;
-        int palo1= 1;
-        String []colores={"Diamante","Picas","Treboles","Corazones"};
-        String color=" ";
-        int elige= (int) (Math.random()*(palo - palo1))+ palo1;
-        if(elige ==1){
-            color=colores[0];
-        }
-        if(elige ==2){
-            color=colores[1];
-        }
-        if(elige ==2){
-            color=colores[2];
-        }
-        if(elige ==3){
-            color=colores[3];
-        }
-
-        return color;
     }
 
 }
