@@ -23,27 +23,38 @@ public class Jugador {
                 insertada=true;
             }
         }
+
     }
     public int calculaPuntos(){
         int puntuacion =0;
-        if (card.length > 0) {
+        if (card.length >=+ 0) {
             for(int i=0;i<card.length;i++){
-                if(card[i].getValue()>=10) {
-                    puntuacion += 10;
-                } else {
-                    puntuacion += card[i].getValue();
+                if(card[i]!=null){
+                    if(card[i].getValue()>=10) {
+                        puntuacion += 10;
+                    } else {
+                        puntuacion += card[i].getValue();
+                    }
+                    if(puntuacion<21){
+                        if(card[i].getValue()==1){
+                            card[i].setValue(11);
+                        }
                 }
-            if(puntuacion<21){
-                if(card[i].getValue()==1){
-                    card[i].getValue();
-            }
-
             }
             }
 
         }
 
         return puntuacion;
+    }
+
+    public int Robot(){
+        int puntacionia=0;
+        do {
+            cogeCarta(null);
+            calculaPuntos();
+        }while (calculaPuntos()<21);
+    return puntacionia=calculaPuntos();
     }
     public String getNombre() {
         return nombre;
