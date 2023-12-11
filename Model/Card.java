@@ -12,6 +12,7 @@ public class Card {
             this.suit=suit;
 
     }
+
     public Card(){
         this(0, " ");
     }

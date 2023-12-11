@@ -12,7 +12,5 @@ public class Menu {
     public static String NumeroJugadores(){
         return UI.readString("¿Cuantos jugadores van a jugar?, en caso de ser un solo jugador jugara contra la IA");
     }
-    public static int ContinuarParar(){
-        return UI.readInt("Introduce 2 si desea mas cartas o 1 si desea parar");
-    }
+
 }

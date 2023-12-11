@@ -13,7 +13,9 @@ public class Mazo {
             }
         }
     }
+    public void imprimerCarta(int numero,String palo){
 
+    }
     public Card sacaCarta(){
         int numero = numeroDeLaCarta();
         return cards[numero];
