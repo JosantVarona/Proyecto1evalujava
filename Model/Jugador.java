@@ -5,18 +5,16 @@ import java.util.Arrays;
 public class Jugador {
     private String nombre;
     private Card[] card;
-
-    //private int puntos;
+    private int puntos;
     public Jugador(String nombre) {
         this.nombre = nombre;
         this.card = new Card[20];
-
+        this.puntos = puntos;
     }
 
     public Jugador() {
 
     }
-
     public void cogerCartas(int NumeroCartas, Mazo mazo) {
 
         int contador = 0;
@@ -38,9 +36,10 @@ public class Jugador {
 
     }
 
+
     public int calculaPuntos() {
         int puntuacion = 0;
-        if (card.length >= +0) {
+        if (card.length >= 0) {
             for (int i = 0; i < card.length; i++) {
                 if (card[i] != null) {
                     if (card[i].getValue() >= 10) {
@@ -48,7 +47,7 @@ public class Jugador {
                     } else {
                         puntuacion += card[i].getValue();
                     }
-                    if (puntuacion < 21) {
+                    if (puntuacion <= 10) {
                         if (card[i].getValue() == 1) {
                             card[i].setValue(11);
                         }
@@ -59,6 +58,15 @@ public class Jugador {
         }
 
         return puntuacion;
+    }
+    public String getCards(){
+        StringBuffer stringCards= new StringBuffer("");
+        for(int i= 0;i<20;i++){
+            if(card[i]!=null){
+                stringCards.append(card[i].toString());
+            }
+        }
+        return stringCards.toString();
     }
 
     public String getNombre() {
@@ -77,11 +85,18 @@ public class Jugador {
         this.card = card;
     }
 
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
     @Override
     public String toString() {
-        return "Jugador{" +
-                "nombre='" + nombre + '\'' +
-                ", card=" + Arrays.toString(card) +
-                '}';
+        return "Las cartas del jugador " +nombre+
+                " son " + getCards();
+
     }
 }

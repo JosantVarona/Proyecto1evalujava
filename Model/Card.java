@@ -1,5 +1,6 @@
 package Model;
 
+import javax.swing.plaf.basic.BasicTreeUI;
 import java.util.Objects;
 
 public class Card {
@@ -43,9 +44,48 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
-                "value=" + value +
-                ", suit='" + suit + '\'' +
-                '}';
+        StringBuffer stringCard = new StringBuffer("");
+        switch (value) {
+            case 11:
+                stringCard.append("          \n" +
+                        " _______\n" +
+                        "|       |\n" +
+                        "|   " + suit + "   |\n" +
+                        "|   " + "J" + "   |\n" +
+                        "|       |\n" +
+                        "|_______|\n" +
+                        "           \n");
+                break;
+            case 12:
+                stringCard.append ("          \n" +
+                        " _______\n" +
+                        "|       |\n" +
+                        "|   " + suit + "   |\n" +
+                        "|   " + "Q" + "   |\n" +
+                        "|       |\n" +
+                        "|_______|\n" +
+                        "           \n");
+                break;
+            case 13:
+                stringCard.append( "          \n" +
+                        " _______\n" +
+                        "|       |\n" +
+                        "|   " + suit + "   |\n" +
+                        "|   " + "K" + "   |\n" +
+                        "|       |\n" +
+                        "|_______|\n" +
+                        "           \n");
+                break;
+            default:
+                stringCard.append( "          \n" +
+                        " _______\n" +
+                        "|       |\n" +
+                        "|   " + suit + "   |\n" +
+                        "|   " + value + "   |\n" +
+                        "|       |\n" +
+                        "|_______|\n" +
+                        "           \n");
+        }
+        return stringCard.toString();
     }
 }
