@@ -15,17 +15,21 @@ public class Jugador {
     public Jugador() {
 
     }
+    //Coge marta del mazo y la introduce a la mano del jugador
     public void cogerCartas(int NumeroCartas, Mazo mazo) {
 
         int contador = 0;
         boolean insertada = false;
         for (int i = 0; i < card.length && !insertada; i++) {
 
+
             if (contador != NumeroCartas) {
+
                 if (card[i] == null) {
                     card[i] = mazo.sacaCarta();
 
                     contador++;
+
                 }
             }else{
                 insertada = true;
@@ -36,7 +40,7 @@ public class Jugador {
 
     }
 
-
+    //calcula los puntos de las cartas del jugador
     public int calculaPuntos() {
         int puntuacion = 0;
         if (card.length >= 0) {
@@ -59,6 +63,7 @@ public class Jugador {
 
         return puntuacion;
     }
+    //Quita los null de la baraja de cartas
     public String getCards(){
         StringBuffer stringCards= new StringBuffer("");
         for(int i= 0;i<20;i++){

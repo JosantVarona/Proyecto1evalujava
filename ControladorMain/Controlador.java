@@ -10,6 +10,7 @@ public class Controlador {
     public static void Empezar() {
         Mazo mazo = new Mazo();
         int opcion = 0;
+        //Menu
         do {
 
             System.out.println("1- Jugador VS IA");
@@ -66,6 +67,7 @@ public class Controlador {
                 System.out.println("***************************************");
 
                 jugadores[0] = jm1;
+
 
                 String nombre2 = UI.readString("Introduce el nombre del usuario");
                 Jugador jm2 = new Jugador(nombre2);
@@ -184,6 +186,7 @@ public class Controlador {
 
     }
 
+    //esto nos dice la ganador de la partida
     public static void winner(Jugador[] jugadores) {
         Jugador ganador = new Jugador();
         int aux = 0;
@@ -204,7 +207,7 @@ public class Controlador {
         System.out.println("**********************************************************");
     }
 
-
+    //Menu para que el usuario decida si seguir o plantarse
     public static void ContinuarJuego(Jugador j, Mazo mazo) {
         int opcion = 0;
         do {
@@ -229,10 +232,8 @@ public class Controlador {
         }
     }
 
-    public static void Ganador2(int jugador1, int jugador2) {
 
-    }
-
+    //IA
     public static void JugarIA(Mazo mazo, Jugador ia, int sumaJugador) {
         boolean opcion = false;
 

@@ -3,6 +3,7 @@ package Model;
 public class Mazo {
     private Card[] cards = new Card[52];
 
+    //Hace el mazo de la baraja de cartas
     public Mazo() {
         String[] palos={"♦","♠","♣","♥"};
         int c=0;
@@ -13,13 +14,12 @@ public class Mazo {
             }
         }
     }
-    public void imprimerCarta(int numero,String palo){
-
-    }
+    //Coge la carta atreves de la posición de la carta en la array
     public Card sacaCarta(){
         int numero = numeroDeLaCarta();
         return cards[numero];
     }
+    //Saca la posición de la carta
     public int numeroDeLaCarta(){
         int mayor = 51;
         int bajo = 0;
